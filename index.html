@@ -1,262 +1,263 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comfy Feather</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Black Gold Store</title>
 
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:#000;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
-z-index:100;
-}
+  body {
+    background: #0b0b0b;
+    color: white;
+  }
 
-.logo{
-font-size:28px;
-font-weight:700;
-color:#d4af37;
-}
+  /* HEADER */
+  header {
+    background: #000;
+    border-bottom: 2px solid gold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+  }
 
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
+  header h1 {
+    color: gold;
+    letter-spacing: 2px;
+  }
 
-nav a{
-color:white;
-text-decoration:none;
-}
+  nav a {
+    color: #fff;
+    margin-left: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
 
-.hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:80px 8%;
-min-height:90vh;
-}
+  nav a:hover {
+    color: gold;
+  }
 
-.hero-text{
-max-width:600px;
-}
+  /* HERO */
+  .hero {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1a, #000);
+    padding: 20px;
+  }
 
-.hero-text span{
-color:#d4af37;
-letter-spacing:2px;
-}
+  .hero h2 {
+    font-size: 3rem;
+    color: gold;
+  }
 
-.hero-text h1{
-font-size:70px;
-line-height:1.05;
-margin:20px 0;
-}
+  .hero p {
+    color: #bbb;
+    margin-top: 10px;
+  }
 
-.gold{
-color:#d4af37;
-}
+  .btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: gold;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
 
-.hero-text p{
-color:#ccc;
-font-size:18px;
-margin-bottom:30px;
-}
+  .btn:hover {
+    background: #e6c200;
+  }
 
-.btn{
-display:inline-block;
-padding:14px 32px;
-background:#d4af37;
-color:black;
-font-weight:700;
-text-decoration:none;
-border-radius:5px;
-margin-right:10px;
-}
+  /* SECTION */
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
 
-.btn2{
-border:1px solid #d4af37;
-color:#d4af37;
-background:transparent;
-}
+  h3 {
+    color: gold;
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
 
-.hero-image{
-width:420px;
-height:420px;
-border-radius:50%;
-border:10px solid #d4af37;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:40px;
-font-weight:700;
-color:#d4af37;
-}
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
 
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-padding:40px 8%;
-}
+  /* CARD */
+  .card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+  }
 
-.feature{
-background:#111;
-padding:25px;
-text-align:center;
-border:1px solid #222;
-border-radius:12px;
-}
+  .card:hover {
+    border-color: gold;
+    transform: translateY(-5px);
+  }
 
-.section{
-padding:80px 8%;
-}
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+  }
 
-.section-title{
-text-align:center;
-font-size:42px;
-margin-bottom:50px;
-}
+  .price {
+    color: gold;
+    margin-top: 8px;
+    font-weight: bold;
+  }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
+  /* CATEGORY TITLE */
+  .category-title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #ddd;
+    font-size: 1.3rem;
+    text-align: left;
+    border-left: 3px solid gold;
+    padding-left: 10px;
+  }
 
-.card{
-background:#111;
-border:1px solid #222;
-padding:35px;
-border-radius:15px;
-text-align:center;
-transition:.3s;
-}
+  /* FOOTER */
+  footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid gold;
+    color: #888;
+  }
+</style>
+</head>
 
-.card:hover{
-transform:translateY(-8px);
-border-color:#d4af37;
-}
+<body>
 
-.card h3{
-margin-bottom:10px;
-}
+<header>
+  <h1>BLACK GOLD STORE</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-.price{
-color:#d4af37;
-font-size:22px;
-font-weight:700;
-margin:10px 0;
-}
+<!-- HERO -->
+<div class="hero" id="home">
+  <div>
+    <h2>Premium Black & Gold Store</h2>
+    <p>Fashion • Design • Lifestyle • Digital Products</p>
+    <button class="btn">Shop Now</button>
+  </div>
+</div>
 
-.design-box{
-background:#111;
-padding:50px;
-border-radius:20px;
-text-align:center;
-border:1px solid #d4af37;
-}
+<!-- SHOP -->
+<section id="shop">
 
-footer{
-padding:40px;
-text-align:center;
-border-top:1px solid #222;
-color:#aaa;
-}
+  <h3>Our Categories</h3>
 
-@media(max-width:768px){
+  <!-- T-SHIRTS -->
+  <div class="category-title">T-Shirts</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
+      <h4>Black Gold Tee</h4>
+      <p class="price">₹499</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975682031-a7a1b2c4a2b5" />
+      <h4>Streetwear Tee</h4>
+      <p class="price">₹599</p>
+    </div>
+  </div>
 
-.hero{
-flex-direction:column;
-text-align:center;
-gap:40px;
-}
+  <!-- HOODIES -->
+  <div class="category-title">Hoodies</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975869011-7d2c3a8b1b1f" />
+      <h4>Luxury Hoodie</h4>
+      <p class="price">₹999</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975682031-a7a1b2c4a2b5" />
+      <h4>Oversized Hoodie</h4>
+      <p class="price">₹1099</p>
+    </div>
+  </div>
 
-.hero-text h1{
-font-size:42px;
-}
+  <!-- CAPS -->
+  <div class="category-title">Caps</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
+      <h4>Black Gold Cap</h4>
+      <p class="price">₹299</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975869011-7d2c3a8b1b1f" />
+      <h4>Snapback Cap</h4>
+      <p class="price">₹349</p>
+    </div>
+  </div>
 
-.hero-image{
-width:260px;
-height:260px;
-}
+  <!-- ACCESSORIES -->
+  <div class="category-title">Accessories</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1514996937319-344454492b37" />
+      <h4>Luxury Watch</h4>
+      <p class="price">₹1999</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" />
+      <h4>Bracelet Set</h4>
+      <p class="price">₹799</p>
+    </div>
+  </div>
 
-nav ul{
-display:none;
-}
+  <!-- DIGITAL PRODUCTS -->
+  <div class="category-title">Digital Products</div>
+  <div class="grid">
+    <div class="card">
+      <h4>Logo Design Pack</h4>
+      <p class="price">₹399</p>
+    </div>
+    <div class="card">
+      <h4>Website Templates</h4>
+      <p class="price">₹599</p>
+    </div>
+  </div>
 
-.features{
-grid-template-columns:1fr 1fr;
-}
+</section>
 
-}
-</style></head><body><nav>
-<div class="logo">Comfy Feather</div><ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Products</a></li>
-<li><a href="#">Custom Design</a></li>
-<li><a href="#">Offers</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav><section class="hero"><div class="hero-text">
-<span>PREMIUM PRINTED T-SHIRTS</span><h1>
-WEAR CONFIDENCE.<br>
-WEAR <span class="gold">COMFY FEATHER.</span>
-</h1><p>
-Premium quality apparel designed for everyday comfort and style.
-Customizable designs, hoodies, polos, oversized tees and more.
-</p><a href="#" class="btn">SHOP NOW</a>
-<a href="#" class="btn btn2">VIEW COLLECTION</a>
+<!-- CONTACT -->
+<section id="contact">
+  <h3>Contact</h3>
+  <p>Email: blackgoldstore@example.com</p>
+  <p>WhatsApp: +91 XXXXX XXXXX</p>
+</section>
 
-</div><div class="hero-image">
-COMFY<br>FEATHER
-</div></section><section class="features"><div class="feature">Premium Quality</div>
-<div class="feature">Ultra Soft Fabric</div>
-<div class="feature">Cash On Delivery</div>
-<div class="feature">Easy Returns</div></section><section class="section"><h2 class="section-title">SHOP BY CATEGORY</h2><div class="grid"><div class="card"><h3>T-SHIRTS</h3></div>
-<div class="card"><h3>HOODIES</h3></div>
-<div class="card"><h3>POLO T-SHIRTS</h3></div>
-<div class="card"><h3>OVERSIZED TEES</h3></div>
-<div class="card"><h3>CUSTOM DESIGN</h3></div></div></section><section class="section"><h2 class="section-title">BEST SELLERS</h2><div class="grid"><div class="card">
-<h3>Design 1</h3>
-<div class="price">₹399</div>
-</div><div class="card">
-<h3>Design 2</h3>
-<div class="price">₹399</div>
-</div><div class="card">
-<h3>Design 3</h3>
-<div class="price">₹499</div>
-</div><div class="card">
-<h3>Design 4</h3>
-<div class="price">₹499</div>
-</div><div class="card">
-<h3>Design 5</h3>
-<div class="price">₹399</div>
-</div><div class="card">
-<h3>Design 6</h3>
-<div class="price">₹399</div>
-</div></div></section><section class="section"><div class="design-box"><h2>DESIGN YOUR OWN T-SHIRT</h2><br><p>
-Upload your idea, add text, choose color and create a unique design.
-</p><br><br>
+<footer>
+  © 2026 Black Gold Store. All rights reserved.
+</footer>
 
-<a href="#" class="btn">START DESIGNING</a>
-
-</div></section><footer>© 2026 Comfy Feather • Premium Printed Apparel
-
-</footer></body>
+</body>
 </html>
