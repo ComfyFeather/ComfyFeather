@@ -3,260 +3,256 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Black Gold Store</title>
+<title>Comfy Feather | Premium Fashion</title>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
 
-  body {
-    background: #0b0b0b;
-    color: white;
-  }
+    body {
+        background: #0a0a0a;
+        color: #fff;
+    }
 
-  /* HEADER */
-  header {
-    background: #000;
-    border-bottom: 2px solid gold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 25px;
-  }
+    /* NAVBAR */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        background: #000;
+        border-bottom: 1px solid #222;
+    }
 
-  header h1 {
-    color: gold;
-    letter-spacing: 2px;
-  }
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: gold;
+        letter-spacing: 2px;
+    }
 
-  nav a {
-    color: #fff;
-    margin-left: 18px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
+    nav a {
+        color: #ccc;
+        margin-left: 25px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
 
-  nav a:hover {
-    color: gold;
-  }
+    nav a:hover {
+        color: gold;
+    }
 
-  /* HERO */
-  .hero {
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle, #1a1a1a, #000);
-    padding: 20px;
-  }
+    /* HERO */
+    .hero {
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background: radial-gradient(circle at top, #1a1a1a, #000);
+        padding: 20px;
+    }
 
-  .hero h2 {
-    font-size: 3rem;
-    color: gold;
-  }
+    .hero h1 {
+        font-size: 55px;
+        color: gold;
+        letter-spacing: 3px;
+    }
 
-  .hero p {
-    color: #bbb;
-    margin-top: 10px;
-  }
+    .hero p {
+        margin-top: 15px;
+        color: #ccc;
+        font-size: 18px;
+    }
 
-  .btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: gold;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-  }
+    .btn {
+        margin-top: 25px;
+        padding: 12px 30px;
+        background: gold;
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
 
-  .btn:hover {
-    background: #e6c200;
-  }
+    .btn:hover {
+        background: #d4af37;
+    }
 
-  /* SECTION */
-  section {
-    padding: 60px 20px;
-    text-align: center;
-  }
+    /* SECTION TITLE */
+    .section-title {
+        text-align: center;
+        margin: 60px 0 30px;
+        font-size: 32px;
+        color: gold;
+    }
 
-  h3 {
-    color: gold;
-    margin-bottom: 25px;
-    font-size: 2rem;
-  }
+    /* CATEGORIES */
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 0 60px;
+    }
 
-  /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
+    .card {
+        background: #111;
+        padding: 25px;
+        text-align: center;
+        border: 1px solid #222;
+        transition: 0.3s;
+        border-radius: 10px;
+    }
 
-  /* CARD */
-  .card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 15px;
-    transition: 0.3s;
-  }
+    .card:hover {
+        border-color: gold;
+        transform: translateY(-5px);
+    }
 
-  .card:hover {
-    border-color: gold;
-    transform: translateY(-5px);
-  }
+    .card h3 {
+        color: gold;
+        margin-bottom: 10px;
+    }
 
-  .card img {
-    width: 100%;
-    border-radius: 10px;
-    height: 180px;
-    object-fit: cover;
-  }
+    /* PRODUCTS */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        padding: 0 60px;
+    }
 
-  .price {
-    color: gold;
-    margin-top: 8px;
-    font-weight: bold;
-  }
+    .product {
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #222;
+        transition: 0.3s;
+    }
 
-  /* CATEGORY TITLE */
-  .category-title {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    color: #ddd;
-    font-size: 1.3rem;
-    text-align: left;
-    border-left: 3px solid gold;
-    padding-left: 10px;
-  }
+    .product:hover {
+        border-color: gold;
+    }
 
-  /* FOOTER */
-  footer {
-    background: #000;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid gold;
-    color: #888;
-  }
+    .img-box {
+        height: 200px;
+        background: linear-gradient(45deg, #222, #000);
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .product h4 {
+        color: gold;
+    }
+
+    /* ABOUT */
+    .about {
+        padding: 60px;
+        text-align: center;
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #000;
+        text-align: center;
+        padding: 30px;
+        border-top: 1px solid #222;
+        color: #777;
+    }
+
+    footer span {
+        color: gold;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+        header {
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 35px;
+        }
+        .categories, .products {
+            padding: 0 20px;
+        }
+    }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>BLACK GOLD STORE</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="logo">COMFY FEATHER</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<!-- HERO -->
-<div class="hero" id="home">
-  <div>
-    <h2>Premium Black & Gold Store</h2>
-    <p>Fashion • Design • Lifestyle • Digital Products</p>
+<section class="hero">
+    <h1>Premium Comfort. Timeless Style.</h1>
+    <p>Luxury fashion brand built for everyday elegance.</p>
     <button class="btn">Shop Now</button>
-  </div>
-</div>
-
-<!-- SHOP -->
-<section id="shop">
-
-  <h3>Our Categories</h3>
-
-  <!-- T-SHIRTS -->
-  <div class="category-title">T-Shirts</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
-      <h4>Black Gold Tee</h4>
-      <p class="price">₹499</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975682031-a7a1b2c4a2b5" />
-      <h4>Streetwear Tee</h4>
-      <p class="price">₹599</p>
-    </div>
-  </div>
-
-  <!-- HOODIES -->
-  <div class="category-title">Hoodies</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975869011-7d2c3a8b1b1f" />
-      <h4>Luxury Hoodie</h4>
-      <p class="price">₹999</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975682031-a7a1b2c4a2b5" />
-      <h4>Oversized Hoodie</h4>
-      <p class="price">₹1099</p>
-    </div>
-  </div>
-
-  <!-- CAPS -->
-  <div class="category-title">Caps</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
-      <h4>Black Gold Cap</h4>
-      <p class="price">₹299</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975869011-7d2c3a8b1b1f" />
-      <h4>Snapback Cap</h4>
-      <p class="price">₹349</p>
-    </div>
-  </div>
-
-  <!-- ACCESSORIES -->
-  <div class="category-title">Accessories</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1514996937319-344454492b37" />
-      <h4>Luxury Watch</h4>
-      <p class="price">₹1999</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" />
-      <h4>Bracelet Set</h4>
-      <p class="price">₹799</p>
-    </div>
-  </div>
-
-  <!-- DIGITAL PRODUCTS -->
-  <div class="category-title">Digital Products</div>
-  <div class="grid">
-    <div class="card">
-      <h4>Logo Design Pack</h4>
-      <p class="price">₹399</p>
-    </div>
-    <div class="card">
-      <h4>Website Templates</h4>
-      <p class="price">₹599</p>
-    </div>
-  </div>
-
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h3>Contact</h3>
-  <p>Email: blackgoldstore@example.com</p>
-  <p>WhatsApp: +91 XXXXX XXXXX</p>
+<h2 class="section-title" id="categories">Categories</h2>
+<section class="categories">
+    <div class="card"><h3>T-Shirts</h3><p>Everyday premium comfort wear</p></div>
+    <div class="card"><h3>Hoodies</h3><p>Warm & stylish streetwear</p></div>
+    <div class="card"><h3>Jackets</h3><p>Bold fashion outerwear</p></div>
+    <div class="card"><h3>Accessories</h3><p>Complete your look</p></div>
 </section>
 
-<footer>
-  © 2026 Black Gold Store. All rights reserved.
+<h2 class="section-title" id="products">Featured Products</h2>
+<section class="products">
+    <div class="product">
+        <div class="img-box"></div>
+        <h4>Black Gold Tee</h4>
+        <p>₹499</p>
+    </div>
+
+    <div class="product">
+        <div class="img-box"></div>
+        <h4>Feather Hoodie</h4>
+        <p>₹999</p>
+    </div>
+
+    <div class="product">
+        <div class="img-box"></div>
+        <h4>Luxury Jacket</h4>
+        <p>₹1499</p>
+    </div>
+
+    <div class="product">
+        <div class="img-box"></div>
+        <h4>Gold Edition Cap</h4>
+        <p>₹299</p>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">About Comfy Feather</h2>
+    <p>
+        Comfy Feather is a premium fashion brand focused on comfort, luxury, and timeless design.
+        We create clothing that blends modern streetwear with elegant simplicity, designed for everyday confidence.
+    </p>
+</section>
+
+<footer id="contact">
+    <p>© 2026 <span>Comfy Feather</span> | All Rights Reserved</p>
 </footer>
 
 </body>
