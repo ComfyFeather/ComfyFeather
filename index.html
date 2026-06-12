@@ -1,132 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comfy Feather</title>
-
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#000;
-color:white;
-}
-
-header{
-background:#111;
-padding:20px;
-text-align:center;
-border-bottom:2px solid gold;
-}
-
-.logo{
-font-size:32px;
-font-weight:bold;
-color:gold;
-}
-
-.hero{
-text-align:center;
-padding:60px 20px;
-}
-
-.hero h1{
-font-size:42px;
-color:gold;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:gold;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-margin-top:20px;
-}
-
-.section{
-padding:40px 20px;
-text-align:center;
-}
-
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.card{
-background:#111;
-padding:20px;
-width:250px;
-border:1px solid gold;
-border-radius:12px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-border-top:1px solid gold;
-margin-top:30px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-<div class="logo">COMFY FEATHER</div>
-</header>
+<nav>
+<div class="logo">Comfy Feather</div>
+
+<ul>
+<li>Home</li>
+<li>Products</li>
+<li>Custom Design</li>
+<li>Offers</li>
+<li>Contact</li>
+</ul>
+</nav>
 
 <section class="hero">
-<h1>Wear Confidence.</h1>
-<h2>Wear Comfy Feather.</h2>
-<p>Premium T-Shirts • Hoodies • Polos</p>
 
-<a class="btn" href="https://instagram.com/comfy_feather">
-Order On Instagram
-</a>
+<div class="hero-text">
+
+<span>PREMIUM PRINTED T-SHIRTS</span>
+
+<h1>
+WEAR CONFIDENCE.<br>
+WEAR <span class="gold">COMFY FEATHER.</span>
+</h1>
+
+<p>
+Premium quality apparel made for comfort and style.
+</p>
+
+<div class="buttons">
+<button class="gold-btn">SHOP NOW</button>
+<button class="outline-btn">VIEW COLLECTION</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900"
+alt="Tshirt">
+
+</div>
+
 </section>
 
-<section class="section">
-<h2 style="color:gold;">Featured Collection</h2>
+<section class="features">
 
-<div class="products">
+<div>Premium Quality</div>
+<div>Ultra Soft Fabric</div>
+<div>COD Available</div>
+<div>Easy Returns</div>
+
+</section>
+
+<section class="categories">
+
+<h2>SHOP BY CATEGORY</h2>
+
+<div class="cards">
 
 <div class="card">
-<h3>Printed T-Shirts</h3>
-<p>Starting from ₹399</p>
+<h3>T-Shirts</h3>
 </div>
 
 <div class="card">
 <h3>Hoodies</h3>
-<p>Premium Comfort Wear</p>
 </div>
 
 <div class="card">
 <h3>Polo T-Shirts</h3>
-<p>Stylish Everyday Look</p>
+</div>
+
+<div class="card">
+<h3>Oversized Tees</h3>
+</div>
+
+<div class="card">
+<h3>Custom Design</h3>
 </div>
 
 </div>
+
 </section>
 
-<section class="section">
-<h2 style="color:gold;">Custom Design Your T-Shirt</h2>
-<p>Send us your image and we'll create a custom tee for you.</p>
+<section class="products">
 
-<a class="btn" href="https://instagram.com/comfy_feather">
-Send Design
-</a>
+<h2>BEST SELLERS</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<h3>Unlimited Tee</h3>
+<p>₹399</p>
+<button>Order Now</button>
+</div>
+
+<div class="product">
+<h3>Level Tee</h3>
+<p>₹399</p>
+<button>Order Now</button>
+</div>
+
+<div class="product">
+<h3>Black Polo</h3>
+<p>₹499</p>
+<button>Order Now</button>
+</div>
+
+<div class="product">
+<h3>Spider Tee</h3>
+<p>₹499</p>
+<button>Order Now</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="custom">
+
+<h2>DESIGN YOUR OWN T-SHIRT</h2>
+
+<p>
+Upload your image and create something unique.
+</p>
+
+<button class="gold-btn">
+START DESIGNING
+</button>
+
 </section>
 
 <footer>
-© 2026 Comfy Feather
+
+<p>© 2026 Comfy Feather</p>
+
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
