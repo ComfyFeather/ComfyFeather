@@ -1,17 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Comfy Feather</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comfy Feather</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#000;
+color:white;
+}
+
+header{
+background:#111;
+padding:20px;
+text-align:center;
+border-bottom:2px solid gold;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:gold;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:42px;
+color:gold;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:gold;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+margin-top:20px;
+}
+
+.section{
+padding:40px 20px;
+text-align:center;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:#111;
+padding:20px;
+width:250px;
+border:1px solid gold;
+border-radius:12px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid gold;
+margin-top:30px;
+}
+</style>
 </head>
-<body style="background:black;color:white;text-align:center;font-family:Arial;">
-    <h1>Comfy Feather</h1>
-    <p>Premium Clothing Brand</p>
 
-    <h2>Shop Our Collection</h2>
-    <p>T-Shirts • Hoodies • Polos</p>
+<body>
 
-    <a href="https://instagram.com/comfy_feather">
-        <button>Order on Instagram</button>
-    </a>
+<header>
+<div class="logo">COMFY FEATHER</div>
+</header>
+
+<section class="hero">
+<h1>Wear Confidence.</h1>
+<h2>Wear Comfy Feather.</h2>
+<p>Premium T-Shirts • Hoodies • Polos</p>
+
+<a class="btn" href="https://instagram.com/comfy_feather">
+Order On Instagram
+</a>
+</section>
+
+<section class="section">
+<h2 style="color:gold;">Featured Collection</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>Printed T-Shirts</h3>
+<p>Starting from ₹399</p>
+</div>
+
+<div class="card">
+<h3>Hoodies</h3>
+<p>Premium Comfort Wear</p>
+</div>
+
+<div class="card">
+<h3>Polo T-Shirts</h3>
+<p>Stylish Everyday Look</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 style="color:gold;">Custom Design Your T-Shirt</h2>
+<p>Send us your image and we'll create a custom tee for you.</p>
+
+<a class="btn" href="https://instagram.com/comfy_feather">
+Send Design
+</a>
+</section>
+
+<footer>
+© 2026 Comfy Feather
+</footer>
+
 </body>
 </html>
