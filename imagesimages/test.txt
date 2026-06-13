@@ -1,14 +1,4 @@
-ComfyFeather/
-│
-├── index.html
-├── README.md
-│
-└── images/
-    ├── tee1.jpg
-    ├── tee2.jpg
-    ├── hoodie1.jpg
-    ├── custom1.jpg
-    └── banner.jpg.
+
 <div class="card">
     <img src="images/tee1.jpg" alt="Oversized T-Shirt">
 
