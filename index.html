@@ -1,331 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfy Feather | Custom T-Shirts</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comfy Feather</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
+body{
+background:#0d0d0d;
+color:white;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+header{
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #d4af37;
+}
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #bdc3c7;
-        }
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#d4af37;
+}
 
-        .info-section {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #e9ecef;
-        }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
 
-        .info-section p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
 
-        .color-tags {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
 
-        .color-tag {
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border: 1px solid #ccc;
-        }
+.hero span{
+color:#d4af37;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
+.hero p{
+max-width:600px;
+opacity:.8;
+margin-bottom:30px;
+}
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+transition:.3s;
+}
 
-        .product-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
+.btn:hover{
+transform:scale(1.05);
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
+.section-title{
+text-align:center;
+font-size:38px;
+margin:60px 0 30px;
+color:#d4af37;
+}
 
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background-color: #f1f2f6; /* Placeholder background */
-        }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:0 8% 80px;
+}
 
-        .product-info {
-            padding: 1.5rem;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.card{
+background:#151515;
+border:1px solid #d4af37;
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+}
 
-        .product-title {
-            margin: 0 0 1rem 0;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
+.card:hover{
+transform:translateY(-8px);
+}
 
-        .order-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
 
-        .order-btn:hover {
-            background-color: #c0392b;
-        }
+.card-content{
+padding:20px;
+}
 
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
+.card h3{
+margin-bottom:10px;
+}
+
+.price{
+color:#d4af37;
+font-size:22px;
+margin-bottom:15px;
+}
+
+.order-btn{
+display:block;
+text-align:center;
+padding:12px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:10px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:60px 8%;
+}
+
+.feature{
+background:#151515;
+padding:25px;
+text-align:center;
+border:1px solid #d4af37;
+border-radius:15px;
+}
+
+.instagram{
+text-align:center;
+padding:80px 20px;
+}
+
+.instagram h2{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #d4af37;
+margin-top:50px;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Comfy Feather</h1>
-        <p>Premium Customizable T-Shirt Designs</p>
-    </header>
+<header>
+<div class="logo">COMFY FEATHER</div>
 
-    <section class="info-section">
-        <p>All designs shown below are customizable examples! We bring your imagination to life. Choose your favorite graphic and pair it with your preferred t-shirt color.</p>
-        <div class="color-tags">
-            <span class="color-tag" style="background-color: #fff; color: #000;">White</span>
-            <span class="color-tag" style="background-color: #000; color: #fff;">Black</span>
-            <span class="color-tag" style="background-color: #add8e6; color: #000;">Light Blue</span>
-            <span class="color-tag" style="background-color: #00008b; color: #fff;">Dark Blue</span>
-            <span class="color-tag" style="background-color: #808080; color: #fff;">Grey</span>
-            <span class="color-tag" style="background-color: #ffd700; color: #000;">Yellow</span>
-        </div>
-    </section>
+<nav>
+<a href="#">Home</a>
+<a href="#products">Shop</a>
+<a href="#custom">Custom</a>
+</nav>
+</header>
 
-    <div class="container">
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <img src="images/design1.jpg" alt="Chai - The Secret To My Energy" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Chai Energy</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<section class="hero">
+<h1>Wear <span>Comfort</span>. Wear Confidence.</h1>
 
-            <div class="product-card">
-                <img src="images/design2.jpg" alt="Gentleman Sketch Design" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">The Gentleman</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<p>
+Premium fashion for everyday style. Custom prints, oversized fits, hoodies and more.
+</p>
 
-            <div class="product-card">
-                <img src="images/design3.jpg" alt="222-GTE Drift Mode & Captain America" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Drift Mode / Hero Shield</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="btn">
+Order on Instagram
+</a>
+</section>
 
-            <div class="product-card">
-                <img src="images/design6.jpg" alt="Black Panther Warrior King" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Warrior King</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<h2 class="section-title" id="products">Featured Collection</h2>
 
-            <div class="product-card">
-                <img src="images/design7.jpg" alt="Let's Play Badminton" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Badminton Smash</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<section class="products">
 
-            <div class="product-card">
-                <img src="images/design8.jpg" alt="Stay Positive" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Stay Positive</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800" alt="">
+<div class="card-content">
+<h3>Classic Black Tee</h3>
+<div class="price">₹499</div>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="order-btn">Order Now</a>
+</div>
+</div>
 
-            <div class="product-card">
-                <img src="images/design9.jpg" alt="Minimalist Color Blocks" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Minimalist Blocks</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800" alt="">
+<div class="card-content">
+<h3>Oversized Street Tee</h3>
+<div class="price">₹799</div>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="order-btn">Order Now</a>
+</div>
+</div>
 
-            <div class="product-card">
-                <img src="images/design10.jpg" alt="Unlimited - Make Everything Possible" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Unlimited Motivation</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800" alt="">
+<div class="card-content">
+<h3>Premium Hoodie</h3>
+<div class="price">₹999</div>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="order-btn">Order Now</a>
+</div>
+</div>
 
-            <div class="product-card">
-                <img src="images/design11.jpg" alt="Retro Motorcycle" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Retro Motorcycle</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="card" id="custom">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=800" alt="">
+<div class="card-content">
+<h3>Custom Printed T-Shirt</h3>
+<div class="price">Starting ₹999</div>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="order-btn">Customize Now</a>
+</div>
+</div>
 
-            <div class="product-card">
-                <img src="images/design12.jpg" alt="Kakashi In First Gear" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Kakashi First Gear</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+</section>
 
-            <div class="product-card">
-                <img src="images/design13.jpg" alt="Roaring Lion" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Neon Lion</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<h2 class="section-title">Why Choose Us?</h2>
 
-            <div class="product-card">
-                <img src="images/design14.jpg" alt="Gojo Satoru" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Gojo Satoru</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<section class="features">
 
-            <div class="product-card">
-                <img src="images/design15.jpg" alt="One Piece Characters" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Anime Pirates</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="feature">
+<h3>Premium Fabric</h3>
+<p>Comfortable and durable clothing.</p>
+</div>
 
-            <div class="product-card">
-                <img src="images/design16.jpg" alt="Goku" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Super Saiyan</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="feature">
+<h3>Custom Designs</h3>
+<p>Create your own unique style.</p>
+</div>
 
-            <div class="product-card">
-                <img src="images/design17.jpg" alt="Om Symbol Mandala" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Om Mandala</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="feature">
+<h3>Fast Delivery</h3>
+<p>Quick order processing and shipping.</p>
+</div>
 
-            <div class="product-card">
-                <img src="images/design18.jpg" alt="Avengers Logo" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Hero Team Crest</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<div class="feature">
+<h3>Trusted Brand</h3>
+<p>Made with passion and quality.</p>
+</div>
 
-            <div class="product-card">
-                <img src="images/design19.jpg" alt="BMW Drift" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Classic Euro Drift</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+</section>
 
-            <div class="product-card">
-                <img src="images/design20.jpg" alt="Iron Man" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Armored Hero</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
+<section class="instagram">
+<h2>@comfy_feather</h2>
+<p>DM us directly for orders and custom designs.</p>
+<br>
+<a href="https://instagram.com/comfy_feather" target="_blank" class="btn">
+Open Instagram
+</a>
+</section>
 
-            <div class="product-card">
-                <img src="images/design21.jpg" alt="Synthetic Sports T-shirt" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Premium Synthetic Fit</h3>
-                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Comfy Feather. All designs are customizable.</p>
-    </footer>
+<footer>
+<p>© 2026 Comfy Feather • All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
