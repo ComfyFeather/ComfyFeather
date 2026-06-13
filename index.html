@@ -3,269 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfy Feather - Premium T-Shirts</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        themeGold: '#D3A347',
-                        themeDark: '#0A0A0A',
-                        themeCard: '#151515'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Comfy Feather | Custom T-Shirts</title>
     <style>
-        body { background-color: #000; color: #fff; }
-        .text-gold { color: #D3A347; }
-        .bg-gold { background-color: #D3A347; }
-        .border-gold { border-color: #D3A347; }
-        .hero-bg {
-            background: radial-gradient(circle at right, #1a150b 0%, #000000 60%);
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #bdc3c7;
+        }
+
+        .info-section {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #e9ecef;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .color-tags {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .color-tag {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #f1f2f6; /* Placeholder background */
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-title {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .order-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .order-btn:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-800">
-        <div class="flex items-center gap-2">
-            <span class="text-2xl font-bold italic"><span class="text-white">Comfy</span><span class="text-gold">Feather</span></span>
-        </div>
-        <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider">
-            <a href="#" class="text-gold">HOME</a>
-            <a href="#" class="hover:text-gold transition">PRODUCTS <i class="fa-solid fa-chevron-down text-xs"></i></a>
-            <a href="#" class="hover:text-gold transition">CUSTOM DESIGN</a>
-            <a href="#" class="hover:text-gold transition">OFFERS</a>
-            <a href="#" class="hover:text-gold transition">ABOUT US</a>
-            <a href="#" class="hover:text-gold transition">CONTACT</a>
-        </div>
-        <div class="flex space-x-6 text-xl">
-            <a href="#" class="hover:text-gold transition"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="hover:text-gold transition"><i class="fa-solid fa-bag-shopping"></i></a>
-        </div>
-    </nav>
+    <header>
+        <h1>Comfy Feather</h1>
+        <p>Premium Customizable T-Shirt Designs</p>
+    </header>
 
-    <section class="hero-bg flex flex-col md:flex-row items-center justify-between px-10 py-16 min-h-[80vh]">
-        <div class="md:w-1/2 space-y-6 z-10">
-            <p class="text-gold font-semibold tracking-widest text-sm uppercase">Premium Printed T-Shirts</p>
-            <h1 class="text-5xl md:text-7xl font-black leading-tight uppercase">
-                Wear Confidence.<br>
-                Wear <br>
-                <span class="text-gold">Comfy Feather.</span>
-            </h1>
-            <p class="text-gray-300 text-lg max-w-md">Trendy Designs. Premium Quality. Made for Everyday Comfort.</p>
-            
-            <div class="grid grid-cols-2 gap-4 py-4 text-sm font-semibold">
-                <div class="flex items-center gap-3"><i class="fa-solid fa-award text-gold text-2xl"></i> PREMIUM QUALITY</div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-cloud text-gold text-2xl"></i> ULTRA SOFT FABRIC</div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-truck text-gold text-2xl"></i> COD AVAILABLE</div>
-            </div>
-
-            <div class="flex gap-4 pt-4">
-                <button class="bg-gold text-black px-8 py-3 font-bold hover:bg-yellow-600 transition flex items-center gap-2">
-                    SHOP NOW <i class="fa-solid fa-chevron-right text-sm"></i>
-                </button>
-                <button class="border border-gray-500 px-8 py-3 font-bold hover:border-gold hover:text-gold transition">
-                    VIEW COLLECTION
-                </button>
-            </div>
-        </div>
-        <div class="md:w-1/2 relative mt-12 md:mt-0 flex justify-center">
-            <div class="absolute w-96 h-96 border-[15px] border-gold rounded-full opacity-30 shadow-[0_0_50px_rgba(211,163,71,0.4)]"></div>
-            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=600" alt="Black T-Shirt" class="relative z-10 w-[80%] drop-shadow-2xl object-cover rounded-lg mix-blend-lighten" />
+    <section class="info-section">
+        <p>All designs shown below are customizable examples! We bring your imagination to life. Choose your favorite graphic and pair it with your preferred t-shirt color.</p>
+        <div class="color-tags">
+            <span class="color-tag" style="background-color: #fff; color: #000;">White</span>
+            <span class="color-tag" style="background-color: #000; color: #fff;">Black</span>
+            <span class="color-tag" style="background-color: #add8e6; color: #000;">Light Blue</span>
+            <span class="color-tag" style="background-color: #00008b; color: #fff;">Dark Blue</span>
+            <span class="color-tag" style="background-color: #808080; color: #fff;">Grey</span>
+            <span class="color-tag" style="background-color: #ffd700; color: #000;">Yellow</span>
         </div>
     </section>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-themeDark border-y border-gray-800 py-6 px-10 text-sm">
-        <div class="flex items-center gap-4 justify-center md:justify-start">
-            <i class="fa-solid fa-shield-halved text-gold text-3xl"></i>
-            <div>
-                <p class="text-gold font-bold">SECURE PAYMENT</p>
-                <p class="text-gray-400 text-xs">100% Secure Checkout</p>
+    <div class="container">
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="images/design1.jpg" alt="Chai - The Secret To My Energy" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Chai Energy</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
             </div>
-        </div>
-        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
-            <i class="fa-solid fa-tag text-gold text-3xl"></i>
-            <div>
-                <p class="text-gold font-bold">BEST PRICE</p>
-                <p class="text-gray-400 text-xs">Starting at ₹399</p>
+
+            <div class="product-card">
+                <img src="images/design2.jpg" alt="Gentleman Sketch Design" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">The Gentleman</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
             </div>
-        </div>
-        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
-            <i class="fa-solid fa-rotate-left text-gold text-3xl"></i>
-            <div>
-                <p class="text-gold font-bold">EASY RETURNS</p>
-                <p class="text-gray-400 text-xs">Hassle Free Returns</p>
+
+            <div class="product-card">
+                <img src="images/design3.jpg" alt="222-GTE Drift Mode & Captain America" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Drift Mode / Hero Shield</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
             </div>
-        </div>
-        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
-            <i class="fa-solid fa-headset text-gold text-3xl"></i>
-            <div>
-                <p class="text-gold font-bold">SUPPORT 24/7</p>
-                <p class="text-gray-400 text-xs">We're Here to Help</p>
+
+            <div class="product-card">
+                <img src="images/design6.jpg" alt="Black Panther Warrior King" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Warrior King</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
             </div>
+
+            <div class="product-card">
+                <img src="images/design7.jpg" alt="Let's Play Badminton" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Badminton Smash</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design8.jpg" alt="Stay Positive" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Stay Positive</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design9.jpg" alt="Minimalist Color Blocks" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Blocks</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design10.jpg" alt="Unlimited - Make Everything Possible" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Unlimited Motivation</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design11.jpg" alt="Retro Motorcycle" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Retro Motorcycle</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design12.jpg" alt="Kakashi In First Gear" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Kakashi First Gear</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design13.jpg" alt="Roaring Lion" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Neon Lion</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design14.jpg" alt="Gojo Satoru" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Gojo Satoru</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design15.jpg" alt="One Piece Characters" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Anime Pirates</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design16.jpg" alt="Goku" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Super Saiyan</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design17.jpg" alt="Om Symbol Mandala" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Om Mandala</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design18.jpg" alt="Avengers Logo" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Hero Team Crest</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design19.jpg" alt="BMW Drift" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Classic Euro Drift</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design20.jpg" alt="Iron Man" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Armored Hero</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/design21.jpg" alt="Synthetic Sports T-shirt" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Premium Synthetic Fit</h3>
+                    <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-btn">Order via Instagram</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <section class="py-16 px-10 text-center">
-        <p class="text-gold text-sm font-bold tracking-widest uppercase mb-2">Explore</p>
-        <h2 class="text-4xl font-bold uppercase mb-10">Shop By Category</h2>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="T-Shirts">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
-                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
-                    <h3 class="font-bold text-lg">T-SHIRTS</h3>
-                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
-                </div>
-            </div>
-            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Hoodies">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
-                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-user-ninja"></i></div>
-                    <h3 class="font-bold text-lg">HOODIES</h3>
-                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
-                </div>
-            </div>
-            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Polo T-Shirts">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
-                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
-                    <h3 class="font-bold text-lg">POLO T-SHIRTS</h3>
-                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
-                </div>
-            </div>
-            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Oversized Tees">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
-                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
-                    <h3 class="font-bold text-lg">OVERSIZED TEES</h3>
-                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
-                </div>
-            </div>
-            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Custom Design">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
-                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-palette"></i></div>
-                    <h3 class="font-bold text-lg">CUSTOM DESIGN</h3>
-                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">DESIGN NOW <i class="fa-solid fa-chevron-right"></i></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-10 px-10 text-center bg-themeDark">
-        <p class="text-gold text-sm font-bold tracking-widest uppercase mb-2">Our Picks</p>
-        <h2 class="text-4xl font-bold uppercase mb-10">Best Sellers</h2>
-        
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
-                <div>
-                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">NEW</span>
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
-                    <h3 class="font-bold text-center text-sm tracking-wide">LEVEL T-SHIRT</h3>
-                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
-                </div>
-                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
-                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
-                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-
-            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
-                <div>
-                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">BEST SELLER</span>
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-white">
-                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Miles Spider Tee</h3>
-                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹499</p>
-                </div>
-                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
-                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
-                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-
-            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
-                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Unlimited T-Shirt</h3>
-                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
-                </div>
-                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
-                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
-                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-
-            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
-                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Black Polo Neck</h3>
-                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹499</p>
-                </div>
-                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
-                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
-                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-
-            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
-                <div>
-                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">NEW</span>
-                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
-                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Unbeaten Tee</h3>
-                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
-                </div>
-                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
-                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
-                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="px-10 py-10">
-        <div class="border border-dashed border-gray-600 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between bg-themeDark">
-            <div class="flex items-center gap-6 mb-6 md:mb-0">
-                <div class="border border-gold border-dashed p-4 rounded text-gold text-4xl"><i class="fa-solid fa-shirt"></i></div>
-                <div>
-                    <h2 class="text-3xl font-bold"><span class="text-white">DESIGN YOUR</span><br><span class="text-gold">OWN T-SHIRT</span></h2>
-                    <p class="text-gray-400 text-sm mt-2">Upload your image or add text and<br>create something unique!</p>
-                </div>
-            </div>
-            
-            <div class="flex items-center gap-6 text-center text-sm font-bold">
-                <div>
-                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-gold mb-2"></i>
-                    <p>UPLOAD<br><span class="text-gray-400 font-normal">Your Image</span></p>
-                </div>
-                <i class="fa-solid fa-arrow-right text-gray-600"></i>
-                <div>
-                    <i class="fa-solid fa-font text-3xl text-gold mb-2 border border-gold rounded px-2"></i>
-                    <p>ADD TEXT<br><span class="text-gray-400 font-normal">Your Style</span></p>
-                </div>
-                <i class="fa-solid fa-arrow-right text-gray-600"></i>
-                <div>
-                    <i class="fa-solid fa-shirt text-3xl text-gold mb-2"></i>
-                    <p>CHOOSE<br><span class="text-gray-400 font-normal">Color & Size</span></p>
-                </div>
-            </div>
-
-            <div class="mt-6 md:mt-0 text-center">
-                <button class="bg-gold text-black font-bold px-8 py-3 rounded hover:bg-yellow-600 transition">START DESIGNING <i class="fa-solid fa-chevron-right ml-2"></i></button>
-                <p class="text-gray-400 text-xs mt-3">Easy • Quick • Unique</p>
-            </div>
-        </div>
-    </section>
+    <footer>
+        <p>&copy; 2026 Comfy Feather. All designs are customizable.</p>
+    </footer>
 
 </body>
 </html>
