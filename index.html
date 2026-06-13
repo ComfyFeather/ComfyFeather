@@ -3,143 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfy Feather | Custom Apparel Catalog</title>
+    <title>Comfy Feather - Premium T-Shirts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        themeGold: '#D3A347',
+                        themeDark: '#0A0A0A',
+                        themeCard: '#151515'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Base Styling */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0b0f19; color: #f3f4f6; padding: 20px; line-height: 1.6; }
-        
-        /* Header Section */
-        header { text-align: center; margin: 40px 0; padding-bottom: 20px; border-bottom: 1px solid #1f2937; }
-        header h1 { font-size: 2.5rem; color: #ffffff; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-        header p { color: #9ca3af; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        
-        /* Info Banner */
-        .info-banner { background: linear-gradient(135deg, #1e1b4b, #311042); border: 1px solid #4c1d95; border-radius: 12px; padding: 20px; max-width: 1100px; margin: 0 auto 40px auto; text-align: center; }
-        .info-banner h2 { font-size: 1.3rem; margin-bottom: 10px; color: #a78bfa; }
-        .colors-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; margin-top: 10px; }
-        .colors-list li { background: #1f2937; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid #374151; }
-        
-        /* Catalog Grid Layout */
-        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px auto; }
-        .product-card { background-color: #111827; border: 1px solid #1f2937; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); border-color: #4b5563; }
-        
-        /* Image Display Area */
-        .image-container { width: 100%; height: 280px; background-color: #1f2937; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
-        .image-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .design-badge { position: absolute; top: 12px; left: 12px; background-color: rgba(0, 0, 0, 0.75); color: #f3f4f6; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; border: 1px solid #374151; }
-        
-        /* Details & Typography */
-        .details { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .details h3 { font-size: 1.2rem; color: #ffffff; margin-bottom: 8px; }
-        .details p { font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; }
-        
-        /* Button Link to Instagram DM */
-        .order-button { display: block; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 1rem; transition: opacity 0.2s ease; text-transform: uppercase; letter-spacing: 1px; }
-        .order-button:hover { opacity: 0.9; }
-        
-        /* Footer styling */
-        footer { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 40px; padding: 20px 0; border-top: 1px solid #1f2937; }
+        body { background-color: #000; color: #fff; }
+        .text-gold { color: #D3A347; }
+        .bg-gold { background-color: #D3A347; }
+        .border-gold { border-color: #D3A347; }
+        .hero-bg {
+            background: radial-gradient(circle at right, #1a150b 0%, #000000 60%);
+        }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header>
-        <h1>Comfy Feather</h1>
-        <p>Premium Graphic Tees & Apparel. Every template is completely customizable to match your style!</p>
-    </header>
+    <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-800">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold italic"><span class="text-white">Comfy</span><span class="text-gold">Feather</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider">
+            <a href="#" class="text-gold">HOME</a>
+            <a href="#" class="hover:text-gold transition">PRODUCTS <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <a href="#" class="hover:text-gold transition">CUSTOM DESIGN</a>
+            <a href="#" class="hover:text-gold transition">OFFERS</a>
+            <a href="#" class="hover:text-gold transition">ABOUT US</a>
+            <a href="#" class="hover:text-gold transition">CONTACT</a>
+        </div>
+        <div class="flex space-x-6 text-xl">
+            <a href="#" class="hover:text-gold transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-gold transition"><i class="fa-solid fa-bag-shopping"></i></a>
+        </div>
+    </nav>
 
-    <div class="info-banner">
-        <h2>✨ Fully Customizable Designs ✨</h2>
-        <p>All catalog artwork can be custom-printed across our diverse canvas sizing and vibrant base options.</p>
-        <ul class="colors-list">
-            <li>⚪ White</li>
-            <li>⚫ Black</li>
-            <li>🔹 Light Blue</li>
-            <li>🔵 Dark Blue</li>
-            <li>🔘 Grey</li>
-            <li>🟡 Yellow</li>
-        </ul>
+    <section class="hero-bg flex flex-col md:flex-row items-center justify-between px-10 py-16 min-h-[80vh]">
+        <div class="md:w-1/2 space-y-6 z-10">
+            <p class="text-gold font-semibold tracking-widest text-sm uppercase">Premium Printed T-Shirts</p>
+            <h1 class="text-5xl md:text-7xl font-black leading-tight uppercase">
+                Wear Confidence.<br>
+                Wear <br>
+                <span class="text-gold">Comfy Feather.</span>
+            </h1>
+            <p class="text-gray-300 text-lg max-w-md">Trendy Designs. Premium Quality. Made for Everyday Comfort.</p>
+            
+            <div class="grid grid-cols-2 gap-4 py-4 text-sm font-semibold">
+                <div class="flex items-center gap-3"><i class="fa-solid fa-award text-gold text-2xl"></i> PREMIUM QUALITY</div>
+                <div class="flex items-center gap-3"><i class="fa-solid fa-cloud text-gold text-2xl"></i> ULTRA SOFT FABRIC</div>
+                <div class="flex items-center gap-3"><i class="fa-solid fa-truck text-gold text-2xl"></i> COD AVAILABLE</div>
+            </div>
+
+            <div class="flex gap-4 pt-4">
+                <button class="bg-gold text-black px-8 py-3 font-bold hover:bg-yellow-600 transition flex items-center gap-2">
+                    SHOP NOW <i class="fa-solid fa-chevron-right text-sm"></i>
+                </button>
+                <button class="border border-gray-500 px-8 py-3 font-bold hover:border-gold hover:text-gold transition">
+                    VIEW COLLECTION
+                </button>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative mt-12 md:mt-0 flex justify-center">
+            <div class="absolute w-96 h-96 border-[15px] border-gold rounded-full opacity-30 shadow-[0_0_50px_rgba(211,163,71,0.4)]"></div>
+            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=600" alt="Black T-Shirt" class="relative z-10 w-[80%] drop-shadow-2xl object-cover rounded-lg mix-blend-lighten" />
+        </div>
+    </section>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-themeDark border-y border-gray-800 py-6 px-10 text-sm">
+        <div class="flex items-center gap-4 justify-center md:justify-start">
+            <i class="fa-solid fa-shield-halved text-gold text-3xl"></i>
+            <div>
+                <p class="text-gold font-bold">SECURE PAYMENT</p>
+                <p class="text-gray-400 text-xs">100% Secure Checkout</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
+            <i class="fa-solid fa-tag text-gold text-3xl"></i>
+            <div>
+                <p class="text-gold font-bold">BEST PRICE</p>
+                <p class="text-gray-400 text-xs">Starting at ₹399</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
+            <i class="fa-solid fa-rotate-left text-gold text-3xl"></i>
+            <div>
+                <p class="text-gold font-bold">EASY RETURNS</p>
+                <p class="text-gray-400 text-xs">Hassle Free Returns</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start border-l border-gray-800 pl-4">
+            <i class="fa-solid fa-headset text-gold text-3xl"></i>
+            <div>
+                <p class="text-gold font-bold">SUPPORT 24/7</p>
+                <p class="text-gray-400 text-xs">We're Here to Help</p>
+            </div>
+        </div>
     </div>
 
-    <div class="catalog-grid">
-
-        <div class="product-card">
-            <div class="image-container">
-                <span class="design-badge">Design 2</span>
-                <img src="images/design2.jpg" alt="Chai - The Secret to My Energy">
-            </div>
-            <div class="details">
-                <div>
-                    <h3>Chai Graphic Tee</h3>
-                    <p>"The Secret To My Energy" Typographic Art</p>
+    <section class="py-16 px-10 text-center">
+        <p class="text-gold text-sm font-bold tracking-widest uppercase mb-2">Explore</p>
+        <h2 class="text-4xl font-bold uppercase mb-10">Shop By Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="T-Shirts">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
+                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
+                    <h3 class="font-bold text-lg">T-SHIRTS</h3>
+                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
                 </div>
-                <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-button">Order Now via DM</a>
+            </div>
+            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Hoodies">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
+                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-user-ninja"></i></div>
+                    <h3 class="font-bold text-lg">HOODIES</h3>
+                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
+                </div>
+            </div>
+            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Polo T-Shirts">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
+                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
+                    <h3 class="font-bold text-lg">POLO T-SHIRTS</h3>
+                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
+                </div>
+            </div>
+            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Oversized Tees">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
+                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-shirt"></i></div>
+                    <h3 class="font-bold text-lg">OVERSIZED TEES</h3>
+                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">SHOP NOW <i class="fa-solid fa-chevron-right"></i></p>
+                </div>
+            </div>
+            <div class="group relative bg-themeCard rounded-lg overflow-hidden border border-gray-800 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=400" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 transition duration-300" alt="Custom Design">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-center pb-6">
+                    <div class="w-10 h-10 rounded-full border border-white flex items-center justify-center mb-2"><i class="fa-solid fa-palette"></i></div>
+                    <h3 class="font-bold text-lg">CUSTOM DESIGN</h3>
+                    <p class="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition">DESIGN NOW <i class="fa-solid fa-chevron-right"></i></p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="product-card">
-            <div class="image-container">
-                <span class="design-badge">Design 3</span>
-                <img src="images/design3.jpg" alt="Gentleman Concept Illustration">
-            </div>
-            <div class="details">
+    <section class="py-10 px-10 text-center bg-themeDark">
+        <p class="text-gold text-sm font-bold tracking-widest uppercase mb-2">Our Picks</p>
+        <h2 class="text-4xl font-bold uppercase mb-10">Best Sellers</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
                 <div>
-                    <h3>Gentleman Illustration</h3>
-                    <p>Minimalist Sketch Minimal Aesthetic Style</p>
+                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">NEW</span>
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
+                    <h3 class="font-bold text-center text-sm tracking-wide">LEVEL T-SHIRT</h3>
+                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
                 </div>
-                <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-button">Order Now via DM</a>
+                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
+                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
+                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+            </div>
+
+            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
+                <div>
+                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">BEST SELLER</span>
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-white">
+                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Miles Spider Tee</h3>
+                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹499</p>
+                </div>
+                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
+                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
+                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+            </div>
+
+            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
+                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Unlimited T-Shirt</h3>
+                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
+                </div>
+                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
+                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
+                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+            </div>
+
+            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
+                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Black Polo Neck</h3>
+                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹499</p>
+                </div>
+                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
+                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
+                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+            </div>
+
+            <div class="bg-themeCard border border-gray-800 rounded-lg p-4 relative text-left group flex flex-col justify-between">
+                <div>
+                    <span class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold px-2 py-0.5 z-10 rounded">NEW</span>
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-48 object-cover mb-4 rounded bg-black">
+                    <h3 class="font-bold text-center text-sm tracking-wide uppercase">Unbeaten Tee</h3>
+                    <p class="text-gold text-center font-bold text-sm mt-1 mb-3">₹399</p>
+                </div>
+                <div class="flex justify-between items-center border border-gray-700 rounded overflow-hidden">
+                    <button class="flex-grow py-2 hover:bg-gold hover:text-black transition text-xs font-bold tracking-wider">ORDER NOW</button>
+                    <button class="px-3 py-2 border-l border-gray-700 hover:text-gold text-xs"><i class="fa-brands fa-instagram"></i></button>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="product-card">
-            <div class="image-container">
-                <span class="design-badge">Design 6</span>
-                <img src="images/design6.jpg" alt="Warrior King Design">
-            </div>
-            <div class="details">
+    <section class="px-10 py-10">
+        <div class="border border-dashed border-gray-600 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between bg-themeDark">
+            <div class="flex items-center gap-6 mb-6 md:mb-0">
+                <div class="border border-gold border-dashed p-4 rounded text-gold text-4xl"><i class="fa-solid fa-shirt"></i></div>
                 <div>
-                    <h3>Warrior King</h3>
-                    <p>Marvel Inspired Commemorative Action Graphic</p>
+                    <h2 class="text-3xl font-bold"><span class="text-white">DESIGN YOUR</span><br><span class="text-gold">OWN T-SHIRT</span></h2>
+                    <p class="text-gray-400 text-sm mt-2">Upload your image or add text and<br>create something unique!</p>
                 </div>
-                <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-button">Order Now via DM</a>
+            </div>
+            
+            <div class="flex items-center gap-6 text-center text-sm font-bold">
+                <div>
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-gold mb-2"></i>
+                    <p>UPLOAD<br><span class="text-gray-400 font-normal">Your Image</span></p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-gray-600"></i>
+                <div>
+                    <i class="fa-solid fa-font text-3xl text-gold mb-2 border border-gold rounded px-2"></i>
+                    <p>ADD TEXT<br><span class="text-gray-400 font-normal">Your Style</span></p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-gray-600"></i>
+                <div>
+                    <i class="fa-solid fa-shirt text-3xl text-gold mb-2"></i>
+                    <p>CHOOSE<br><span class="text-gray-400 font-normal">Color & Size</span></p>
+                </div>
+            </div>
+
+            <div class="mt-6 md:mt-0 text-center">
+                <button class="bg-gold text-black font-bold px-8 py-3 rounded hover:bg-yellow-600 transition">START DESIGNING <i class="fa-solid fa-chevron-right ml-2"></i></button>
+                <p class="text-gray-400 text-xs mt-3">Easy • Quick • Unique</p>
             </div>
         </div>
-
-        <div class="product-card">
-            <div class="image-container">
-                <span class="design-badge">Design 14</span>
-                <img src="images/design14.jpg" alt="Gojo Satoru Anime Theme">
-            </div>
-            <div class="details">
-                <div>
-                    <h3>Gojo Satoru Anime</h3>
-                    <p>Reverse Curse Technique Signature Edition</p>
-                </div>
-                <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-button">Order Now via DM</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="image-container">
-                <span class="design-badge">Design 15</span>
-                <img src="images/design15.jpg" alt="One Piece Anime Trio">
-            </div>
-            <div class="details">
-                <div>
-                    <h3>One Piece Anime Edition</h3>
-                    <p>Featuring Monster Trio Cutouts with iconic Skull Hat Logo</p>
-                </div>
-                <a href="https://ig.me/m/comfy_feather" target="_blank" class="order-button">Order Now via DM</a>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Comfy Feather Catalog. To request custom options or place a bulk purchase, please tap any order link above.</p>
-    </footer>
+    </section>
 
 </body>
 </html>
