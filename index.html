@@ -1,259 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Comfy Feather | Premium Fashion</title>
+<meta charset="UTF-8">
+<title>Comfy Feather</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
 
-    body {
-        background: #0a0a0a;
-        color: #fff;
-    }
+body{
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
 
-    /* NAVBAR */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 60px;
-        background: #000;
-        border-bottom: 1px solid #222;
-    }
+/* glow */
+.glow{
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:gold;
+  filter:blur(180px);
+  opacity:0.15;
+  top:-150px;
+  left:-150px;
+  z-index:-1;
+}
 
-    .logo {
-        font-size: 22px;
-        font-weight: bold;
-        color: gold;
-        letter-spacing: 2px;
-    }
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.6);
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(10px);
+}
 
-    nav a {
-        color: #ccc;
-        margin-left: 25px;
-        text-decoration: none;
-        transition: 0.3s;
-    }
+nav h1{
+  color:gold;
+  font-size:20px;
+  letter-spacing:2px;
+}
 
-    nav a:hover {
-        color: gold;
-    }
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  opacity:0.7;
+}
 
-    /* HERO */
-    .hero {
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        background: radial-gradient(circle at top, #1a1a1a, #000);
-        padding: 20px;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px;
+}
 
-    .hero h1 {
-        font-size: 55px;
-        color: gold;
-        letter-spacing: 3px;
-    }
+.hero h2{
+  font-size:55px;
+  color:gold;
+}
 
-    .hero p {
-        margin-top: 15px;
-        color: #ccc;
-        font-size: 18px;
-    }
+.hero p{
+  opacity:0.8;
+  margin-top:10px;
+}
 
-    .btn {
-        margin-top: 25px;
-        padding: 12px 30px;
-        background: gold;
-        color: black;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
+.cta{
+  margin-top:20px;
+  padding:14px 22px;
+  background:gold;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:6px;
+}
 
-    .btn:hover {
-        background: #d4af37;
-    }
+/* PRODUCTS */
+.section{
+  padding:60px 20px;
+  text-align:center;
+}
 
-    /* SECTION TITLE */
-    .section-title {
-        text-align: center;
-        margin: 60px 0 30px;
-        font-size: 32px;
-        color: gold;
-    }
+.section h3{
+  color:gold;
+  margin-bottom:20px;
+  font-size:28px;
+}
 
-    /* CATEGORIES */
-    .categories {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 0 60px;
-    }
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
 
-    .card {
-        background: #111;
-        padding: 25px;
-        text-align: center;
-        border: 1px solid #222;
-        transition: 0.3s;
-        border-radius: 10px;
-    }
+.card{
+  width:230px;
+  background:rgba(255,255,255,0.06);
+  border-radius:12px;
+  overflow:hidden;
+  transition:0.3s;
+}
 
-    .card:hover {
-        border-color: gold;
-        transform: translateY(-5px);
-    }
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px gold;
+}
 
-    .card h3 {
-        color: gold;
-        margin-bottom: 10px;
-    }
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
 
-    /* PRODUCTS */
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        padding: 0 60px;
-    }
+.card p{
+  padding:10px;
+  font-weight:bold;
+}
 
-    .product {
-        background: #111;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #222;
-        transition: 0.3s;
-    }
+.card button{
+  width:100%;
+  padding:10px;
+  border:none;
+  background:gold;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .product:hover {
-        border-color: gold;
-    }
+/* FLOAT BUTTON */
+.float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:gold;
+  color:black;
+  padding:12px 14px;
+  border-radius:50px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 15px gold;
+}
 
-    .img-box {
-        height: 200px;
-        background: linear-gradient(45deg, #222, #000);
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-
-    .product h4 {
-        color: gold;
-    }
-
-    /* ABOUT */
-    .about {
-        padding: 60px;
-        text-align: center;
-        color: #ccc;
-        line-height: 1.6;
-    }
-
-    /* FOOTER */
-    footer {
-        background: #000;
-        text-align: center;
-        padding: 30px;
-        border-top: 1px solid #222;
-        color: #777;
-    }
-
-    footer span {
-        color: gold;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-        header {
-            flex-direction: column;
-        }
-        .hero h1 {
-            font-size: 35px;
-        }
-        .categories, .products {
-            padding: 0 20px;
-        }
-    }
-
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:gray;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">COMFY FEATHER</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<div class="glow"></div>
 
-<section class="hero">
-    <h1>Premium Comfort. Timeless Style.</h1>
-    <p>Luxury fashion brand built for everyday elegance.</p>
-    <button class="btn">Shop Now</button>
-</section>
+<nav>
+  <h1>COMFY FEATHER</h1>
+  <div>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
 
-<h2 class="section-title" id="categories">Categories</h2>
-<section class="categories">
-    <div class="card"><h3>T-Shirts</h3><p>Everyday premium comfort wear</p></div>
-    <div class="card"><h3>Hoodies</h3><p>Warm & stylish streetwear</p></div>
-    <div class="card"><h3>Jackets</h3><p>Bold fashion outerwear</p></div>
-    <div class="card"><h3>Accessories</h3><p>Complete your look</p></div>
-</section>
+<div class="hero">
+  <h2>WEAR COMFORT. OWN STYLE.</h2>
+  <p>Premium Streetwear | Limited Drops | Custom Fashion</p>
 
-<h2 class="section-title" id="products">Featured Products</h2>
-<section class="products">
-    <div class="product">
-        <div class="img-box"></div>
-        <h4>Black Gold Tee</h4>
-        <p>₹499</p>
+  <button class="cta" onclick="openDM()">🔥 SHOP NOW</button>
+</div>
+
+<div class="section" id="products">
+  <h3>OUR DROPS</h3>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+      <p>Custom T-Shirt</p>
+      <button onclick="buy('Custom T-Shirt')">Order</button>
     </div>
 
-    <div class="product">
-        <div class="img-box"></div>
-        <h4>Feather Hoodie</h4>
-        <p>₹999</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+      <p>Oversized Tee</p>
+      <button onclick="buy('Oversized Tee')">Order</button>
     </div>
 
-    <div class="product">
-        <div class="img-box"></div>
-        <h4>Luxury Jacket</h4>
-        <p>₹1499</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+      <p>Hoodie</p>
+      <button onclick="buy('Hoodie')">Order</button>
     </div>
 
-    <div class="product">
-        <div class="img-box"></div>
-        <h4>Gold Edition Cap</h4>
-        <p>₹299</p>
-    </div>
-</section>
+  </div>
+</div>
 
-<section class="about" id="about">
-    <h2 class="section-title">About Comfy Feather</h2>
-    <p>
-        Comfy Feather is a premium fashion brand focused on comfort, luxury, and timeless design.
-        We create clothing that blends modern streetwear with elegant simplicity, designed for everyday confidence.
-    </p>
-</section>
+<div class="section" id="about">
+  <h3>ABOUT US</h3>
+  <p style="max-width:600px;margin:auto;opacity:0.8;">
+    Comfy Feather is a premium streetwear brand focused on comfort, minimal design, and bold identity. Limited drops only.
+  </p>
+</div>
 
-<footer id="contact">
-    <p>© 2026 <span>Comfy Feather</span> | All Rights Reserved</p>
+<div class="float" onclick="openDM()">DM NOW</div>
+
+<footer>
+  © 2026 Comfy Feather | @comfy_feather
 </footer>
+
+<script>
+function openDM(){
+  window.open("https://ig.me/m/comfy_feather","_blank");
+}
+
+function buy(product){
+  let msg = "Hi! I want to order:\nProduct: " + product;
+  let url = "https://ig.me/m/comfy_feather?text=" + encodeURIComponent(msg);
+  window.open(url,"_blank");
+}
+</script>
 
 </body>
 </html>
