@@ -1,1 +1,28 @@
+ComfyFeather/
+│
+├── index.html
+├── README.md
+│
+└── images/
+    ├── tee1.jpg
+    ├── tee2.jpg
+    ├── hoodie1.jpg
+    ├── custom1.jpg
+    └── banner.jpg.
+<div class="card">
+    <img src="images/tee1.jpg" alt="Oversized T-Shirt">
 
+    <div class="card-content">
+        <h3>Oversized Black Tee</h3>
+        <div class="price">₹699</div>
+
+        <a href="https://instagram.com/comfy_feather"
+           target="_blank"
+           class="order-btn">
+           Order Now
+        </a>
+    </div>
+</div>
+<section class="hero">
+    <img src="images/banner.jpg" alt="Comfy Feather Banner">
+</section>
