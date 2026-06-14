@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comfy Feather | Premium Fashion</title>
 
-<title>Comfy Feather | Premium Streetwear</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -16,6 +15,9 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
@@ -25,35 +27,25 @@ color:#111;
 overflow-x:hidden;
 }
 
-img{
-width:100%;
-display:block;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-:root{
---primary:#111;
---secondary:#666;
---light:#f8f8f8;
---accent:#000;
-}
+/* NAVBAR */
 
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:white;
+background:#fff;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+z-index:1000;
+}
+
+.navbar{
+max-width:1400px;
+margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
-z-index:1000;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+padding:18px 5%;
 }
 
 .logo{
@@ -62,18 +54,24 @@ font-weight:800;
 letter-spacing:1px;
 }
 
-nav{
+.logo span{
+color:#888;
+}
+
+.nav-links{
 display:flex;
 gap:30px;
 }
 
-nav a{
+.nav-links a{
+text-decoration:none;
+color:#111;
 font-weight:500;
 transition:.3s;
 }
 
-nav a:hover{
-opacity:.6;
+.nav-links a:hover{
+color:#666;
 }
 
 .hero{
@@ -87,41 +85,38 @@ linear-gradient(
 rgba(0,0,0,.35),
 rgba(0,0,0,.35)
 ),
-url('next-level.jpg');
+url('images/next-level.jpg');
 background-size:cover;
 background-position:center;
 color:white;
 padding:20px;
 }
 
-.hero-content{
-max-width:900px;
-}
-
-.hero h1{
-font-size:70px;
+.hero-content h1{
+font-size:68px;
 font-weight:800;
-line-height:1.1;
 margin-bottom:20px;
 }
 
-.hero p{
+.hero-content p{
 font-size:20px;
 margin-bottom:35px;
+max-width:700px;
 }
 
 .hero-btn{
-padding:15px 35px;
-background:white;
-color:black;
-font-weight:700;
-border-radius:50px;
-transition:.4s;
 display:inline-block;
+padding:14px 35px;
+background:#fff;
+color:#111;
+text-decoration:none;
+border-radius:30px;
+font-weight:700;
+transition:.3s;
 }
 
 .hero-btn:hover{
-transform:translateY(-5px);
+transform:translateY(-4px);
 }
 
 .section{
@@ -129,16 +124,16 @@ padding:100px 8%;
 }
 
 .section-title{
-font-size:42px;
 text-align:center;
-margin-bottom:15px;
+font-size:42px;
 font-weight:800;
+margin-bottom:15px;
 }
 
-.section-subtitle{
+.section-sub{
 text-align:center;
 color:#666;
-margin-bottom:60px;
+margin-bottom:50px;
 }
 
 .categories{
@@ -147,50 +142,34 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.category-card{
-position:relative;
-overflow:hidden;
+.category{
+background:#f7f7f7;
+padding:40px;
+text-align:center;
 border-radius:20px;
-height:350px;
-cursor:pointer;
+transition:.4s;
 }
 
-.category-card img{
-height:100%;
-object-fit:cover;
-transition:.5s;
+.category:hover{
+transform:translateY(-10px);
 }
 
-.category-card:hover img{
-transform:scale(1.08);
-}
-
-.category-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.35);
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.category-overlay h3{
-color:white;
-font-size:28px;
-font-weight:700;
+.category h3{
+font-size:24px;
+margin-bottom:10px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
 .product-card{
-background:white;
-border-radius:22px;
+background:#fff;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:.4s;
 }
 
@@ -198,85 +177,130 @@ transition:.4s;
 transform:translateY(-10px);
 }
 
-.product-image{
-height:340px;
-overflow:hidden;
-}
-
-.product-image img{
-height:100%;
+.product-card img{
+width:100%;
+height:320px;
 object-fit:cover;
-transition:.5s;
-}
-
-.product-card:hover img{
-transform:scale(1.08);
 }
 
 .product-info{
-padding:22px;
+padding:20px;
 }
 
-.product-title{
+.product-info h3{
 font-size:20px;
-font-weight:700;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
-.product-price{
+.price{
 font-size:18px;
-font-weight:600;
+font-weight:700;
 margin-bottom:15px;
 }
 
-.buy-btn{
+.order-btn{
 display:inline-block;
-padding:12px 24px;
 background:#111;
-color:white;
-border-radius:50px;
+color:#fff;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
 font-weight:600;
 transition:.3s;
 }
 
-.buy-btn:hover{
-opacity:.85;
+.order-btn:hover{
+background:#444;
 }
 
-.banner{
-padding:100px 8%;
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:25px;
+}
+
+.about h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.about p{
+line-height:1.8;
+color:#666;
+}
+
+.newsletter{
 background:#111;
-color:white;
+color:#fff;
+padding:90px 8%;
 text-align:center;
 }
 
-.banner h2{
-font-size:50px;
+.newsletter h2{
+font-size:42px;
 margin-bottom:15px;
 }
 
-.banner p{
-max-width:700px;
-margin:auto;
-line-height:1.8;
+.newsletter p{
+margin-bottom:25px;
+color:#ddd;
+}
+
+.newsletter input{
+width:320px;
+max-width:90%;
+padding:15px;
+border:none;
+border-radius:30px;
+outline:none;
+}
+
+.newsletter button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+margin-left:10px;
+cursor:pointer;
+font-weight:700;
+}
+
+footer{
+background:#000;
+color:#fff;
+padding:60px 8%;
+text-align:center;
+}
+
+footer h2{
+margin-bottom:15px;
+}
+
+footer p{
+color:#bbb;
 }
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:45px;
+.hero-content h1{
+font-size:42px;
 }
 
-nav{
+.nav-links{
 display:none;
+}
+
+.about{
+grid-template-columns:1fr;
 }
 
 .section-title{
 font-size:32px;
-}
-
-.banner h2{
-font-size:35px;
 }
 
 }
@@ -287,492 +311,271 @@ font-size:35px;
 <body>
 
 <header>
+<nav class="navbar">
+<div class="logo">COMFY <span>FEATHER</span></div>
 
-<div class="logo">
-COMFY FEATHER
-</div>
-
-<nav>
+<div class="nav-links">
 <a href="#home">Home</a>
 <a href="#categories">Categories</a>
-<a href="#products">Products</a>
+<a href="#collection">Collection</a>
 <a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
-
 </header>
 
 <section class="hero" id="home">
-
 <div class="hero-content">
-
-<h1>
-WEAR COMFORT.<br>
-WEAR CONFIDENCE.
-</h1>
+<h1>Wear Comfort. Wear Confidence.</h1>
 
 <p>
-Premium Streetwear Designed For The Next Generation.
+Premium T-Shirts, Hoodies and Streetwear
+crafted for everyday style.
 </p>
 
-<a href="#products" class="hero-btn">
-SHOP NOW
+<a href="#collection" class="hero-btn">
+Explore Collection
 </a>
 
 </div>
-
 </section>
 
 <section class="section" id="categories">
 
-<h2 class="section-title">
-SHOP BY CATEGORY
-</h2>
+<h2 class="section-title">Shop Categories</h2>
 
-<p class="section-subtitle">
-Discover Your Perfect Style
+<p class="section-sub">
+Find your perfect style.
 </p>
 
 <div class="categories">
-<div class="product-card">
-    <img src="images/Retro.jpg" alt="Retro Tee">
-    <h3>retro Tee</h3>
-    <p>Vintage streetwear style.</p>
-</div>
 
-<div class="product-card">
-    <img src="images/spidee.jpg" alt="Spider Tee">
-    <h3>SpiderMan T-shirts</h3>
-    <p>Bold graphic design.</p>
-</div>
-
-<div class="product-card">
-    <img src="images/blackpolo.jpg" alt="Black Polo">
-    <h3>Black Polo</h3>
-    <p>Premium everyday wear.</p>
-</div>
-
-<div class="product-card">
-    <img src="images/avengers.jpg" alt="Avengers Tee">
-    <h3>Avengers Tee</h3>
-    <p>Marvel-inspired collection.</p>
-</div>
-<div class="category-card">
-<img src="blackmoneyhoodie.jpg">
-<div class="category-overlay">
-<h3>Hoodies</h3>
-</div>
-</div>
-
-<div class="category-card">
-<img src="images/blackunlimited-tee.jpg">
-<div class="category-overlay">
+<div class="category">
 <h3>T-Shirts</h3>
-</div>
+<p>Premium everyday essentials.</p>
 </div>
 
-<div class="category-card">
-<img src="images/next-level.jpg">
-<div class="category-overlay">
-<h3>New Drops</h3>
+<div class="category">
+<h3>Anime Collection</h3>
+<p>Inspired by iconic characters.</p>
 </div>
+
+<div class="category">
+<h3>Hoodies</h3>
+<p>Comfort meets fashion.</p>
+</div>
+
+<div class="category">
+<h3>Polos</h3>
+<p>Smart casual premium wear.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="products">
+<section class="section" id="collection">
 
-<h2 class="section-title">
-FEATURED COLLECTION
-</h2>
+<h2 class="section-title">New Collection</h2>
 
-<p class="section-subtitle">
-Best Sellers From Comfy Feather
+<p class="section-sub">
+Latest drops from Comfy Feather
 </p>
 
 <div class="products">
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/blackunlimited-tee.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Black Unlimited T-shirt 
-</h3>
-
-<p class="product-price">
-₹699
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Unlimited Black Tee</h3>
+<div class="price">₹799</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
-
 </div>
 </div>
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/blackkakasi-tee.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Kakashi t-shirt 
-</h3>
-
-<p class="product-price">
-₹699
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Kakasi Tee</h3>
+<div class="price">₹799</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
-
 </div>
 </div>
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/whitegentelman-tee.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Gentlemen 
-</h3>
-
-<p class="product-price">
-₹599
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Gentelman Tee</h3>
+<div class="price">₹799</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
+</div>
+</div>
 
-</div>
-</div>
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/blacknaruto-tee.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Naruto T-shirts 
-</h3>
-
-<p class="product-price">
-₹599
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Naruto Tee</h3>
+<div class="price">₹799</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
-
 </div>
 </div>
-
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/blackmoneyhoodie.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Money Hoodie
-</h3>
-
-<p class="product-price">
-₹1299
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Money Hoodie</h3>
+<div class="price">₹1299</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
-
 </div>
 </div>
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/whitepeacehoodie.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Peace Hoodie
-</h3>
-
-<p class="product-price">
-₹1299
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Peace Hoodie</h3>
+<div class="price">₹1299</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
-
 </div>
 </div>
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="images/next-level.jpg">
-</div>
-
 <div class="product-info">
-
-<h3 class="product-title">
-Next Level Edition
-</h3>
-
-<p class="product-price">
-₹799
-</p>
-
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-class="buy-btn">
+<h3>Next Level Tee</h3>
+<div class="price">₹899</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
 Order Now
 </a>
+</div>
+</div>
 
+<div class="product-card">
+<img src="images/retro.jpg">
+<div class="product-info">
+<h3>Retro Tee</h3>
+<div class="price">₹899</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
+Order Now
+</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="images/spidee.jpg">
+<div class="product-info">
+<h3>Spidee Edition</h3>
+<div class="price">₹899</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
+Order Now
+</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="images/blackpolo.jpg">
+<div class="product-info">
+<h3>Black Polo</h3>
+<div class="price">₹999</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
+Order Now
+</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="images/avengers.jpg">
+<div class="product-info">
+<h3>Avengers Edition</h3>
+<div class="price">₹899</div>
+<a href="https://instagram.com/comfy_feather" class="order-btn">
+Order Now
+</a>
 </div>
 </div>
 
 </div>
-
-</section>
-
-<section class="banner">
-
-<h2>
-PREMIUM STREETWEAR
-</h2>
-
-<p>
-Comfy Feather combines comfort, confidence, and creativity.
-Every design is created to help you stand out while feeling comfortable every day.
-Join the growing community and wear fashion that represents your personality.
-</p>
-
 </section>
 
 <section class="section" id="about">
 
-<h2 class="section-title">
-ABOUT COMFY FEATHER
-</h2>
+<div class="about">
 
-<p class="section-subtitle">
-Built For Dreamers, Creators & Trendsetters
-</p>
+<img src="images/next-level.jpg" alt="Comfy Feather">
 
-<div style="
-max-width:900px;
-margin:auto;
-text-align:center;
-line-height:2;
-font-size:18px;
-color:#555;
-">
+<div>
 
-Comfy Feather is a modern fashion brand focused on premium quality,
-creative designs and comfortable everyday wear.
+<h2>About Comfy Feather</h2>
 
-Our mission is to create apparel that feels as good as it looks.
-
-From oversized hoodies to statement graphic tees,
-every product is designed with attention to detail and streetwear aesthetics.
-
-We believe fashion should inspire confidence while staying affordable.
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-WHY CHOOSE US
-</h2>
-
-<div class="products">
-
-<div class="product-card">
-<div class="product-info">
-<h3 class="product-title">
-Premium Quality
-</h3>
 <p>
-High-quality fabrics built for comfort and durability.
-</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-info">
-<h3 class="product-title">
-Unique Designs
-</h3>
-<p>
-Original streetwear-inspired graphics and concepts.
-</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-info">
-<h3 class="product-title">
-Direct Ordering
-</h3>
-<p>
-Order instantly through Instagram DM.
-</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<footer style="
-background:#111;
-color:white;
-padding:70px 8%;
-text-align:center;
-">
-
-<h2 style="
-font-size:32px;
-margin-bottom:15px;
-">
-COMFY FEATHER
-</h2>
-
-<p style="
-max-width:700px;
-margin:auto;
-line-height:1.8;
-opacity:.8;
-">
-
-Premium Streetwear Brand.
-Wear Comfort. Wear Confidence.
-
+Comfy Feather is a modern fashion brand focused on premium comfort,
+creative designs and everyday confidence. Our collections blend
+streetwear aesthetics with quality fabrics to create apparel that
+looks great and feels even better.
 </p>
 
 <br>
 
-<a
-href="https://instagram.com/comfy_feather"
-target="_blank"
-style="
-display:inline-block;
-padding:14px 28px;
-background:white;
-color:black;
-border-radius:50px;
-font-weight:700;
-">
-DM ON INSTAGRAM
-</a>
+<p>
+From anime-inspired graphics to premium basics and hoodies,
+every product is designed to help you express your style.
+</p>
 
-<p style="
-margin-top:35px;
-opacity:.6;
-">
+</div>
+
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<h2>Join The Community</h2>
+
+<p>
+Get updates on new drops and exclusive collections.
+</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
+
+</section>
+
+<footer id="contact">
+
+<h2>COMFY FEATHER</h2>
+
+<p>
+Premium Fashion • Modern Streetwear • Everyday Comfort
+</p>
+
+<br>
+
+<p>
+Instagram:
+<a href="https://instagram.com/comfy_feather"
+style="color:white;">
+@comfy_feather
+</a>
+</p>
+
+<br>
+
+<p>
 © 2026 Comfy Feather. All Rights Reserved.
 </p>
 
 </footer>
-
-<script>
-
-/* HEADER EFFECT */
-
-window.addEventListener("scroll",()=>{
-
-const header=document.querySelector("header");
-
-if(window.scrollY>50){
-
-header.style.padding="14px 8%";
-header.style.background="rgba(255,255,255,.95)";
-
-}else{
-
-header.style.padding="18px 8%";
-header.style.background="white";
-
-}
-
-});
-
-/* FADE ANIMATION */
-
-const cards=document.querySelectorAll(".product-card,.category-card");
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
-
-}
-
-});
-
-});
-
-cards.forEach(card=>{
-
-card.style.opacity="0";
-card.style.transform="translateY(50px)";
-card.style.transition=".8s";
-
-observer.observe(card);
-
-});
-
-</script>
 
 </body>
 </html>
